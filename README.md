@@ -1,39 +1,71 @@
-# Electricity Usage and Billing History Manager
+# Electricity Billing System
 
-## Project Overview
-The Electricity Usage and Billing History Manager is a C++ console-based project developed using Data Structures and Algorithms (DSA). It manages monthly electricity consumption records, calculates estimated electricity bills, and maintains billing history.
+## 1. About the Project
 
-## Technologies Used
-- Programming Language: C++
-- Data Structures: Doubly Linked List and Stack using Linked List
-- Concepts: Dynamic Memory Allocation, Searching, Insertion, Deletion, Updating, and Undo Operations
+The Electricity Billing System is a C++ project developed to manage electricity consumer records and calculate monthly electricity bills. It uses a **Doubly Linked List** to store and manage consumer details and billing history. The system allows users to register consumers, add monthly billing records, display billing history, and search for consumer records using a simple menu-driven interface.
 
-## Features
-1. **First-Time Meter Registration** – Registers the initial electricity meter reading.
-2. **Add Monthly Billing Record** – Calculates units consumed and the estimated bill.
-3. **Display All Records** – Displays complete electricity billing history.
-4. **Search Record** – Searches for a billing record by month and year.
-5. **Update Record** – Updates an existing billing record.
-6. **Delete Record** – Deletes a selected billing record.
-7. **Undo Last Operation** – Reverses the latest addition, deletion, or update.
-8. **Navigate Records** – Moves forward and backward through billing records.
-9. **Yearly Totals** – Calculates total electricity consumption and estimated bills for a selected year.
+## 2. Features
 
-## Data Structures Used
+### Basic Features
 
-### 1. Doubly Linked List
-Each billing record contains:
-- Month and year
+- **Register New Consumer:** Register a consumer with a unique ID, name, and initial meter reading.
+- **Add Monthly Billing Record:** Enter the current meter reading and rate per unit to calculate the electricity bill.
+- **Display Billing History:** View consumer details, previous readings, current readings, units consumed, and bill amounts.
+- **Search Consumer Record:** Find billing records using the consumer ID.
+- **Exit System:** Exit the program safely.
+
+### Electricity Billing Management Features
+
+- **Consumer Identification:** Use a consumer ID to identify each registered consumer.
+- **Meter Reading Tracking:** Store previous and current meter readings.
+- **Unit Calculation:** Calculate electricity consumption by subtracting the previous reading from the current reading.
+- **Bill Calculation:** Calculate the total bill by multiplying units consumed by the rate per unit.
+- **Input Validation:** Prevent duplicate consumer registration, negative initial readings, decreasing meter readings, and negative electricity rates.
+- **Billing History:** Maintain multiple billing records for consumers using a linked list.
+
+## 3. Data Structure Used
+
+**Doubly Linked List**
+
+Each node stores:
+
+- Consumer ID
+- Consumer name
 - Previous meter reading
 - Current meter reading
 - Units consumed
-- Estimated bill
+- Billing month
+- Rate per unit
+- Total bill amount
+- Pointer to the previous node
+- Pointer to the next node
 
-Each node contains `prev` and `next` pointers, allowing traversal in both directions.
+This structure allows consumer and billing records to be stored dynamically. Each node contains pointers to the previous and next nodes, making it suitable for managing a sequence of records.
 
-### 2. Stack Using Linked List
-The stack stores previous operations for undo functionality. It follows the **LIFO (Last In, First Out)** principle.
+## 4. Technologies Used
 
-## Electricity Bill Calculation
-The program uses an example rate of ₹6 per unit.
+- C++
+- Structures and pointers
+- Dynamic memory allocation
+- Doubly Linked List
+- Functions
+- Conditional statements and loops
+- Menu-driven programming
+- Basic input validation
+
+## 5. Applications
+
+- Basic electricity billing management
+- Consumer record management
+- Monthly electricity consumption tracking
+- Electricity bill calculation
+- Learning data structures through a practical example
+
+## 6. Conclusion
+
+This project demonstrates how a doubly linked list can be used to manage electricity consumer records and monthly billing information. It provides basic operations for registering consumers, calculating electricity bills, displaying billing history, and searching for records. The project also demonstrates the practical application of C++ structures, pointers, dynamic memory allocation, and functions. It can be further improved by adding features such as bill payment tracking, late payment charges, report generation, and file handling for permanent data storage.
+
+## 7. Language
+
+C++
 
