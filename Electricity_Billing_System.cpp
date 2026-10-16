@@ -1,0 +1,178 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+struct Node {
+    int id, previous, current, units;
+    string name, month;
+    float rate, bill;
+    Node *prev, *next;
+};
+
+Node *head = nullptr, *tail = nullptr;
+
+Node* search(int id) {
+    Node *t = head, *found = nullptr;
+    while (t) {
+        if (t->id == id) found = t;
+        t = t->next;
+    }
+    return found;
+}
+
+void registerConsumer() {
+    int id, reading;
+    string name;
+
+    cout << "Consumer ID: ";
+    cin >> id;
+
+    if (search(id)) {
+        cout << "Consumer already registered!\n";
+        return;
+    }
+
+    cout << "Name: ";
+    cin >> name;
+
+    cout << "Initial meter reading: ";
+    cin >> reading;
+
+    if (reading < 0) {
+        cout << "Invalid reading!\n";
+        return;
+    }
+
+    Node *n = new Node{id, reading, reading, 0, name, "Initial",
+                       0, 0, tail, nullptr};
+
+    if (tail) tail->next = n;
+    else head = n;
+    tail = n;
+
+    cout << "Consumer registered successfully!\n";
+}
+
+void addRecord() {
+    int id, reading;
+    string month;
+    float rate;
+
+    cout << "Consumer ID: ";
+    cin >> id;
+
+    Node *last = search(id);
+    if (!last) {
+        cout << "Register consumer first!\n";
+        return;
+    }
+
+    cout << "Month: ";
+    cin >> month;
+
+    cout << "Current meter reading: ";
+    cin >> reading;
+
+    cout << "Rate per unit: ";
+    cin >> rate;
+
+    if (reading < last->current || rate < 0) {
+        cout << "Invalid reading or rate!\n";
+        return;
+    }
+
+    Node *n = new Node{id, last->current, reading,
+                       reading - last->current, last->name, month, rate,
+                       (reading - last->current) * rate, tail, nullptr};
+
+    if (tail) tail->next = n;
+    else head = n;
+    tail = n;
+
+    cout << "\nUnits consumed: " << n->units;
+    cout << "\nTotal bill: Rs. " << n->bill << "\n";
+}
+
+void display() {
+    Node *t = head;
+
+    if (!t) {
+        cout << "No records available.\n";
+        return;
+    }
+
+    cout << "\nID Name Month Previous Current Units Bill\n";
+    while (t) {
+        cout << t->id << " " << t->name << " " << t->month
+             << " " << t->previous << " " << t->current
+             << " " << t->units << " Rs." << t->bill << "\n";
+        t = t->next;
+    }
+}
+
+int main() {
+    int choice;
+
+    do {
+        cout << "\n--- ELECTRICITY BILLING SYSTEM ---";
+        cout << "\n1. Register New Consumer";
+        cout << "\n2. Add Monthly Billing Record";
+        cout << "\n3. Display Billing History";
+        cout << "\n4. Search Consumer Record";
+        cout << "\n5. Exit";
+        cout << "\nEnter choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                registerConsumer();
+                break;
+
+            case 2:
+                addRecord();
+                break;
+
+            case 3:
+                display();
+                break;
+
+            case 4: {
+                int id;
+                cout << "Enter Consumer ID: ";
+                cin >> id;
+
+                Node *t = head;
+                bool found = false;
+
+                while (t) {
+                    if (t->id == id) {
+                        cout << t->name << " | " << t->month
+                             << " | Units: " << t->units
+                             << " | Bill: Rs." << t->bill << "\n";
+                        found = true;
+                    }
+                    t = t->next;
+                }
+
+                if (!found) cout << "Consumer not found!\n";
+                break;
+            }
+
+            case 5:
+                cout << "Thank you!\n";
+                break;
+
+            default:
+                cout << "Invalid choice!\n";
+        }
+    } while (choice != 5);
+
+    while (head) {
+        Node *t = head;
+        head = head->next;
+        delete t;
+    }
+
+    return 0;
+}
