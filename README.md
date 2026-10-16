@@ -1,12 +1,12 @@
-# Electricity Billing System
+  Electricity Billing System
 
-## 1. About the Project
+ 1. About the Project
 
 The Electricity Billing System is a C++ project developed to manage electricity consumer records and calculate monthly electricity bills. It uses a **Doubly Linked List** to store and manage consumer details and billing history. The system allows users to register consumers, add monthly billing records, display billing history, and search for consumer records using a simple menu-driven interface.
 
-## 2. Features
+ 2. Features
 
-### Basic Features
+ Basic Features
 
 - **Register New Consumer:** Register a consumer with a unique ID, name, and initial meter reading.
 - **Add Monthly Billing Record:** Enter the current meter reading and rate per unit to calculate the electricity bill.
@@ -14,7 +14,7 @@ The Electricity Billing System is a C++ project developed to manage electricity 
 - **Search Consumer Record:** Find billing records using the consumer ID.
 - **Exit System:** Exit the program safely.
 
-### Electricity Billing Management Features
+ Electricity Billing Management Features
 
 - **Consumer Identification:** Use a consumer ID to identify each registered consumer.
 - **Meter Reading Tracking:** Store previous and current meter readings.
@@ -23,7 +23,7 @@ The Electricity Billing System is a C++ project developed to manage electricity 
 - **Input Validation:** Prevent duplicate consumer registration, negative initial readings, decreasing meter readings, and negative electricity rates.
 - **Billing History:** Maintain multiple billing records for consumers using a linked list.
 
-## 3. Data Structure Used
+ 3. Data Structure Used
 
 **Doubly Linked List**
 
@@ -42,7 +42,7 @@ Each node stores:
 
 This structure allows consumer and billing records to be stored dynamically. Each node contains pointers to the previous and next nodes, making it suitable for managing a sequence of records.
 
-## 4. Technologies Used
+4. Technologies Used
 
 - C++
 - Structures and pointers
@@ -53,7 +53,7 @@ This structure allows consumer and billing records to be stored dynamically. Eac
 - Menu-driven programming
 - Basic input validation
 
-## 5. Applications
+5. Applications
 
 - Basic electricity billing management
 - Consumer record management
@@ -61,11 +61,11 @@ This structure allows consumer and billing records to be stored dynamically. Eac
 - Electricity bill calculation
 - Learning data structures through a practical example
 
-## 6. Conclusion
+6. Conclusion
 
 This project demonstrates how a doubly linked list can be used to manage electricity consumer records and monthly billing information. It provides basic operations for registering consumers, calculating electricity bills, displaying billing history, and searching for records. The project also demonstrates the practical application of C++ structures, pointers, dynamic memory allocation, and functions. It can be further improved by adding features such as bill payment tracking, late payment charges, report generation, and file handling for permanent data storage.
 
-## 7. Language
+7. Language
 
 C++
 
