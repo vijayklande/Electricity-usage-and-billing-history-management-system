@@ -65,7 +65,4 @@ This structure allows consumer and billing records to be stored dynamically. Eac
 
 This project demonstrates how a doubly linked list can be used to manage electricity consumer records and monthly billing information. It provides basic operations for registering consumers, calculating electricity bills, displaying billing history, and searching for records. The project also demonstrates the practical application of C++ structures, pointers, dynamic memory allocation, and functions. It can be further improved by adding features such as bill payment tracking, late payment charges, report generation, and file handling for permanent data storage.
 
-7. Language
-
-C++
 
