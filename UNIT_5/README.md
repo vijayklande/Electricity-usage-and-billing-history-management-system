@@ -61,8 +61,8 @@ Consider four airports: Pune, Mumbai, Delhi, and Chennai.
 9. Stop the program.
 
 ## Time and Space Complexity
- Time Complexity: O(n²)
- Space Complexity: O(n²)
+ •Time Complexity: O(n²)
+ •space Complexity: O(n²)
 
 Here, n represents the number of airports.
 
