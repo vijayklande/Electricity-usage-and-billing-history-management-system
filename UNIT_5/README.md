@@ -7,12 +7,12 @@ Develop a graph using an adjacency matrix to represent airports and direct fligh
 To implement a graph using an adjacency matrix in C++ to represent airports and their direct flight connections.
 
 ## Concepts Used
-- Graph
-- Adjacency Matrix
-- Two-Dimensional Array
-- Strings
-- Nested Loops
-- Conditional Statements
+ Graph
+ Adjacency Matrix
+ Two-Dimensional Array
+ Strings
+ Nested Loops
+ Conditional Statements
 
 ## Description
 This project represents airports as vertices and direct flight connections as edges in a graph. An adjacency matrix stores the connections between airports.
@@ -61,26 +61,26 @@ Consider four airports: Pune, Mumbai, Delhi, and Chennai.
 9. Stop the program.
 
 ## Time and Space Complexity
-- Time Complexity: O(n²)
-- Space Complexity: O(n²)
+ Time Complexity: O(n²)
+ Space Complexity: O(n²)
 
 Here, n represents the number of airports.
 
 ## Applications
-- Airline route management
-- Airport connectivity representation
-- Flight network analysis
-- Graph-based network systems
+  Airline route management
+  Airport connectivity representation
+  Flight network analysis
+  Graph-based network systems
 
 ## Technologies Used
-- Programming Language: C++
-- Data Structure: Graph
-- Graph Representation: Adjacency Matrix
+  Programming Language: C++
+  Data Structure: Graph
+  Graph Representation: Adjacency Matrix
 
 ## Limitations
-- The program supports a maximum of 20 airports.
-- Flight connections are entered manually.
-- Flight connections are directional. A flight from one airport to another does not automatically mean a return flight is available.
+  The program supports a maximum of 20 airports.
+  Flight connections are entered manually.
+  Flight connections are directional. A flight from one airport to another does not automatically mean a return flight is available.
 
 ## Conclusion
 This project demonstrates graph implementation using an adjacency matrix in C++. It represents airport connectivity and displays the available direct flights from each airport.
